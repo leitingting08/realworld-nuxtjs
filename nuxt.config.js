@@ -1,65 +1,56 @@
-module.exports = {
-  router: {
-    linkActiveClass: 'active',
-    // 自定义路由表规则
-    extendRoutes (routes, resolve) {
-      // 清除 Nuxt.js 基于 pages 目录默认生成的路由表规则
-      routes.splice(0)
+/**
+ * Nuxt.js 配置文件
+ */
 
-      routes.push(...[
-        {
-          path: '/',
-          component: resolve(__dirname, 'pages/layout/'),
-          children: [
-            {
-              path: '', // 默认子路由
-              name: 'home',
-              component: resolve(__dirname, 'pages/home/')
-            },
-            {
-              path: '/login',
-              name: 'login',
-              component: resolve(__dirname, 'pages/login/')
-            },
-            {
-              path: '/register',
-              name: 'register',
-              component: resolve(__dirname, 'pages/login/')
-            },
-            {
-              path: '/profile/:username',
-              name: 'profile',
-              component: resolve(__dirname, 'pages/profile/')
-            },
-            {
-              path: '/settings',
-              name: 'settings',
-              component: resolve(__dirname, 'pages/settings/')
-            },
-            {
-              path: '/editor',
-              name: 'editor',
-              component: resolve(__dirname, 'pages/editor/')
-            },
-            {
-              path: '/article/:slug',
-              name: 'article',
-              component: resolve(__dirname, 'pages/article/')
-            }
-          ]
+module.exports = {
+  mode: "spa",
+  build: {
+    babel: {
+      plugins: [
+        [
+          "component",
+          {
+            libraryName: "element-ui",
+            styleLibraryName: "theme-chalk",
+          },
+        ],
+      ],
+    },
+    publicPath: "//ogzo.gitee.io/realworld-nuxtjs/",
+  },
+  router: {
+    linkActiveClass: "active",
+    mode: "hash",
+    // 自定义路由表规则
+    extendRoutes(routes, resolve) {
+      let index = null;
+      routes.forEach((v, i) => {
+        if (v.path == "/home") {
+          index = i;
         }
-      ])
-    }
+      });
+      // 清除 Nuxt.js 基于 pages 目录默认生成的home路由
+      if (index != null) {
+        routes.splice(index, 1);
+      }
+      // 生成首页路由
+      routes.push({
+        path: "/",
+        name: "home",
+        component: resolve(__dirname, "pages/home/"),
+      });
+    },
   },
 
   server: {
-    host: '0.0.0.0',
-    port: 3000
+    host: "0.0.0.0",
+    port: 3000,
   },
 
   // 注册插件
   plugins: [
-    '~/plugins/request.js',
-    '~/plugins/dayjs.js'
-  ]
-}
+    "~/plugins/request.js",
+    "~/plugins/dayjs.js",
+    "~/plugins/element-ui.js",
+  ],
+};
