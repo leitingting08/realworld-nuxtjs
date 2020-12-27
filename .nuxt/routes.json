@@ -1,61 +1,51 @@
 [
   {
-    "name": "article",
-    "path": "/article",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/article/index.vue",
-    "chunkName": "pages/article/index"
-  },
-  {
-    "name": "editor",
-    "path": "/editor",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/editor/index.vue",
-    "chunkName": "pages/editor/index"
-  },
-  {
-    "name": "layout",
-    "path": "/layout",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/layout/index.vue",
-    "chunkName": "pages/layout/index"
-  },
-  {
-    "name": "login",
-    "path": "/login",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login/index.vue",
-    "chunkName": "pages/login/index"
-  },
-  {
-    "name": "profile",
-    "path": "/profile",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/profile/index.vue",
-    "chunkName": "pages/profile/index"
-  },
-  {
-    "name": "register",
-    "path": "/register",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/register/index.vue",
-    "chunkName": "pages/register/index"
-  },
-  {
-    "name": "settings",
-    "path": "/settings",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/settings/index.vue",
-    "chunkName": "pages/settings/index"
-  },
-  {
-    "name": "article-components-article-comments",
-    "path": "/article/components/article-comments",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/article/components/article-comments.vue",
-    "chunkName": "pages/article/components/article-comments"
-  },
-  {
-    "name": "article-components-article-meta",
-    "path": "/article/components/article-meta",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/article/components/article-meta.vue",
-    "chunkName": "pages/article/components/article-meta"
-  },
-  {
     "path": "/",
-    "name": "home",
-    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/home"
+    "component": "/Users/leitingting/github/realworld-nuxtjs/pages/layout",
+    "children": [
+      {
+        "path": "",
+        "name": "home",
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/home",
+        "_name": "_5b9ab5aa"
+      },
+      {
+        "path": "/login",
+        "name": "login",
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login",
+        "_name": "_745a489d"
+      },
+      {
+        "path": "/register",
+        "name": "register",
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login",
+        "_name": "_745a489d"
+      },
+      {
+        "path": "/profile/:username",
+        "name": "profile",
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/profile",
+        "_name": "_bfdd3446"
+      },
+      {
+        "path": "/settings",
+        "name": "settings",
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/settings",
+        "_name": "_19493322"
+      },
+      {
+        "path": "/editor",
+        "name": "editor",
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/editor",
+        "_name": "_0a62eeb9"
+      },
+      {
+        "path": "/article/:slug",
+        "name": "article",
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/article",
+        "_name": "_f248adac"
+      }
+    ],
+    "_name": "_1631c876"
   }
 ]

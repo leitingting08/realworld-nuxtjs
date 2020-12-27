@@ -4,16 +4,13 @@ import { normalizeURL, decode } from '@nuxt/ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _01eaa3c5 = () => interopDefault(import('../pages/article/index.vue' /* webpackChunkName: "pages/article/index" */))
-const _4ec0fad8 = () => interopDefault(import('../pages/editor/index.vue' /* webpackChunkName: "pages/editor/index" */))
-const _7969d7de = () => interopDefault(import('../pages/layout/index.vue' /* webpackChunkName: "pages/layout/index" */))
-const _d0aa6110 = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
-const _27e34690 = () => interopDefault(import('../pages/profile/index.vue' /* webpackChunkName: "pages/profile/index" */))
-const _755abd6c = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
-const _15464eca = () => interopDefault(import('../pages/settings/index.vue' /* webpackChunkName: "pages/settings/index" */))
-const _1157c277 = () => interopDefault(import('../pages/article/components/article-comments.vue' /* webpackChunkName: "pages/article/components/article-comments" */))
-const _687190f0 = () => interopDefault(import('../pages/article/components/article-meta.vue' /* webpackChunkName: "pages/article/components/article-meta" */))
+const _1631c876 = () => interopDefault(import('../pages/layout' /* webpackChunkName: "" */))
 const _5b9ab5aa = () => interopDefault(import('../pages/home' /* webpackChunkName: "" */))
+const _745a489d = () => interopDefault(import('../pages/login' /* webpackChunkName: "" */))
+const _bfdd3446 = () => interopDefault(import('../pages/profile' /* webpackChunkName: "" */))
+const _19493322 = () => interopDefault(import('../pages/settings' /* webpackChunkName: "" */))
+const _0a62eeb9 = () => interopDefault(import('../pages/editor' /* webpackChunkName: "" */))
+const _f248adac = () => interopDefault(import('../pages/article' /* webpackChunkName: "" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -25,52 +22,44 @@ Router.prototype.push = function push (location, onComplete = emptyFn, onAbort) 
 Vue.use(Router)
 
 export const routerOptions = {
-  mode: 'hash',
+  mode: 'history',
   base: '/',
   linkActiveClass: 'active',
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,
 
   routes: [{
-    path: "/article",
-    component: _01eaa3c5,
-    name: "article"
-  }, {
-    path: "/editor",
-    component: _4ec0fad8,
-    name: "editor"
-  }, {
-    path: "/layout",
-    component: _7969d7de,
-    name: "layout"
-  }, {
-    path: "/login",
-    component: _d0aa6110,
-    name: "login"
-  }, {
-    path: "/profile",
-    component: _27e34690,
-    name: "profile"
-  }, {
-    path: "/register",
-    component: _755abd6c,
-    name: "register"
-  }, {
-    path: "/settings",
-    component: _15464eca,
-    name: "settings"
-  }, {
-    path: "/article/components/article-comments",
-    component: _1157c277,
-    name: "article-components-article-comments"
-  }, {
-    path: "/article/components/article-meta",
-    component: _687190f0,
-    name: "article-components-article-meta"
-  }, {
     path: "/",
-    component: _5b9ab5aa,
-    name: "home"
+    component: _1631c876,
+    children: [{
+      path: "",
+      component: _5b9ab5aa,
+      name: "home"
+    }, {
+      path: "/login",
+      component: _745a489d,
+      name: "login"
+    }, {
+      path: "/register",
+      component: _745a489d,
+      name: "register"
+    }, {
+      path: "/profile/:username",
+      component: _bfdd3446,
+      name: "profile"
+    }, {
+      path: "/settings",
+      component: _19493322,
+      name: "settings"
+    }, {
+      path: "/editor",
+      component: _0a62eeb9,
+      name: "editor"
+    }, {
+      path: "/article/:slug",
+      component: _f248adac,
+      name: "article"
+    }]
   }],
 
   fallback: false
