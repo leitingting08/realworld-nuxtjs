@@ -6,38 +6,46 @@
       {
         "path": "",
         "name": "home",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/home"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/home",
+        "_name": "_5b9ab5aa"
       },
       {
         "path": "/login",
         "name": "login",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login",
+        "_name": "_745a489d"
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login",
+        "_name": "_745a489d"
       },
       {
         "path": "/profile/:username",
         "name": "profile",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/profile"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/profile",
+        "_name": "_bfdd3446"
       },
       {
         "path": "/settings",
         "name": "settings",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/settings"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/settings",
+        "_name": "_19493322"
       },
       {
         "path": "/editor",
         "name": "editor",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/editor"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/editor",
+        "_name": "_0a62eeb9"
       },
       {
         "path": "/article/:slug",
         "name": "article",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/article"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/article",
+        "_name": "_f248adac"
       }
-    ]
+    ],
+    "_name": "_1631c876"
   }
 ]
