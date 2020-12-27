@@ -74,7 +74,7 @@ export default {
       }
       this.disabled = false;
       this.$router.replace({
-        path: '/article?slug=' + this.slug
+        path: '/article/' + this.slug
       })
     },
     init(){

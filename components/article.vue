@@ -3,7 +3,7 @@
     <div class="article-meta">
       <nuxt-link
         :to="{
-          path: `/profile?username=${article.author.username}`,
+          path: `/profile/${article.author.username}`,
         }"
       >
         <img :src="article.author.image" />
@@ -12,7 +12,7 @@
         <nuxt-link
           class="author"
           :to="{
-            path: `/profile?username=${article.author.username}`,
+            path: `/profile/${article.author.username}`,
           }"
         >
           {{ article.author.username }}
@@ -33,7 +33,7 @@
     <nuxt-link
       class="preview-link"
       :to="{
-        path: `/article?slug=${article.slug}`,
+        path: `/article/${article.slug}`,
       }"
     >
       <h1>{{ article.title }}</h1>
