@@ -11,12 +11,18 @@
       {
         "path": "/login",
         "name": "login",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login",
+        "props": {
+          "isLogin": true
+        }
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login"
+        "component": "/Users/leitingting/github/realworld-nuxtjs/pages/login",
+        "props": {
+          "isLogin": false
+        }
       },
       {
         "path": "/profile/:username",
@@ -29,7 +35,7 @@
         "component": "/Users/leitingting/github/realworld-nuxtjs/pages/settings"
       },
       {
-        "path": "/editor",
+        "path": "/editor/:slug?",
         "name": "editor",
         "component": "/Users/leitingting/github/realworld-nuxtjs/pages/editor"
       },

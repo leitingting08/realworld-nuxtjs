@@ -38,10 +38,12 @@ export const routerOptions = {
     }, {
       path: "/login",
       component: _745a489d,
+      props: {"isLogin":true},
       name: "login"
     }, {
       path: "/register",
       component: _745a489d,
+      props: {"isLogin":false},
       name: "register"
     }, {
       path: "/profile/:username",
@@ -52,7 +54,7 @@ export const routerOptions = {
       component: _19493322,
       name: "settings"
     }, {
-      path: "/editor",
+      path: "/editor/:slug?",
       component: _0a62eeb9,
       name: "editor"
     }, {

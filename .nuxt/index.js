@@ -13,9 +13,8 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_request_e6dd6e04 from 'nuxt_plugin_request_e6dd6e04' // Source: ../plugins/request.js (mode: 'all')
-import nuxt_plugin_dayjs_66ce5f68 from 'nuxt_plugin_dayjs_66ce5f68' // Source: ../plugins/dayjs.js (mode: 'all')
-import nuxt_plugin_elementui_72a9ed1c from 'nuxt_plugin_elementui_72a9ed1c' // Source: ../plugins/element-ui.js (mode: 'all')
+import nuxt_plugin_request_735f5dfc from 'nuxt_plugin_request_735f5dfc' // Source: ../plugins/request.js (mode: 'all')
+import nuxt_plugin_dayjs_690cc834 from 'nuxt_plugin_dayjs_690cc834' // Source: ../plugins/dayjs.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -75,7 +74,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"meta":[],"link":[],"style":[],"script":[]},
+    head: {"title":"conduit","meta":[{"charset":"utf-8"},{"hid":"keywords","name":"keywords","content":"conduit"},{"hid":"description","name":"description","content":"conduit"}],"link":[],"style":[],"script":[]},
 
     store,
     router,
@@ -204,16 +203,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_request_e6dd6e04 === 'function') {
-    await nuxt_plugin_request_e6dd6e04(app.context, inject)
+  if (typeof nuxt_plugin_request_735f5dfc === 'function') {
+    await nuxt_plugin_request_735f5dfc(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_dayjs_66ce5f68 === 'function') {
-    await nuxt_plugin_dayjs_66ce5f68(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_elementui_72a9ed1c === 'function') {
-    await nuxt_plugin_elementui_72a9ed1c(app.context, inject)
+  if (typeof nuxt_plugin_dayjs_690cc834 === 'function') {
+    await nuxt_plugin_dayjs_690cc834(app.context, inject)
   }
 
   // Lock enablePreview in context

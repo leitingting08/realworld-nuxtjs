@@ -1,83 +1,67 @@
-/**
- * Nuxt.js 配置文件
- */
-
-module.exports = {
-  build: {
-    babel: {
-      plugins: [
-        [
-          "component",
-          {
-            libraryName: "element-ui",
-            styleLibraryName: "theme-chalk",
-          },
-        ],
-      ],
-    },
-  },
+export default {
+  plugins: ['@/plugins/request.js', '@/plugins/dayjs.js'],
   router: {
     linkActiveClass: 'active',
-    // 自定义路由表规则
-    extendRoutes (routes, resolve) {
-      // 清除 Nuxt.js 基于 pages 目录默认生成的路由表规则
+    extendRoutes(routes, resolve) {
+      // 清除默认路由表
       routes.splice(0)
-
       routes.push(...[
         {
           path: '/',
           component: resolve(__dirname, 'pages/layout/'),
           children: [
             {
-              path: '', // 默认子路由
+              path: '',
               name: 'home',
-              component: resolve(__dirname, 'pages/home/')
+              component: resolve(__dirname, 'pages/home/'),
             },
             {
               path: '/login',
               name: 'login',
-              component: resolve(__dirname, 'pages/login/')
+              component: resolve(__dirname, 'pages/login/'),
+              props: { isLogin: true }
             },
             {
               path: '/register',
               name: 'register',
-              component: resolve(__dirname, 'pages/login/')
+              component: resolve(__dirname, 'pages/login/'),
+              props: { isLogin: false }
             },
             {
               path: '/profile/:username',
               name: 'profile',
-              component: resolve(__dirname, 'pages/profile/')
+              component: resolve(__dirname, 'pages/profile/'),
             },
             {
               path: '/settings',
               name: 'settings',
-              component: resolve(__dirname, 'pages/settings/')
+              component: resolve(__dirname, 'pages/settings/'),
             },
             {
-              path: '/editor',
+              path: '/editor/:slug?',
               name: 'editor',
-              component: resolve(__dirname, 'pages/editor/')
+              component: resolve(__dirname, 'pages/editor/'),
             },
             {
               path: '/article/:slug',
               name: 'article',
-              component: resolve(__dirname, 'pages/article/')
-            }
+              component: resolve(__dirname, 'pages/article/'),
+            },
           ]
         }
       ])
     }
   },
-
   server: {
-    host: "0.0.0.0",
-    port: 3000,
+    host: '0.0.0.0',
+    port: 3000
   },
-
-  // 注册插件
-  plugins: [
-    "~/plugins/request.js",
-    "~/plugins/dayjs.js",
-    "~/plugins/element-ui.js",
-  ],
+  head: {
+    title: 'conduit',
+    meta: [
+      { charset: 'utf-8' },
+      { hid: 'keywords', name: 'keywords', content: 'conduit' },
+      { hid: 'description', name: 'description', content: 'conduit' }
+    ],
+  },
 }
