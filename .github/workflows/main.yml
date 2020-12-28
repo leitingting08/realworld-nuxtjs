@@ -53,7 +53,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /data/realworld-nuxtjs
+          cd /data/wwwroot/realworld-nuxtjs
           git checkout master
           git pull
           yarn

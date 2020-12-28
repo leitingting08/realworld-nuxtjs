@@ -4,7 +4,7 @@
     <nav class="navbar navbar-light">
       <div class="container">
         <nuxt-link to="/"
-          class="navbar-brand">conduit</nuxt-link>
+          class="navbar-brand">nuxt</nuxt-link>
         <ul class="nav navbar-nav pull-xs-right">
           <template v-if="user">
             <li class="nav-item">
@@ -56,7 +56,7 @@
     <!-- 底部 -->
     <footer>
       <div class="container">
-        <nuxt-link to="/" class="logo-font">conduit</nuxt-link>
+        <nuxt-link to="/" class="logo-font">nuxt</nuxt-link>
         <span class="attribution">
           An interactive learning project from <a href="https://thinkster.io">Thinkster</a>. Code &amp; design licensed under MIT.
         </span>

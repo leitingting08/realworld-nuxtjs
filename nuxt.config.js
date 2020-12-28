@@ -57,11 +57,11 @@ export default {
     port: 3000
   },
   head: {
-    title: 'conduit',
+    title: 'nuxt',
     meta: [
       { charset: 'utf-8' },
-      { hid: 'keywords', name: 'keywords', content: 'conduit' },
-      { hid: 'description', name: 'description', content: 'conduit' }
+      { hid: 'keywords', name: 'keywords', content: 'nuxt' },
+      { hid: 'description', name: 'description', content: 'nuxt' }
     ],
   },
 }
